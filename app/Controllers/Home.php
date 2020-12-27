@@ -20,5 +20,9 @@ class Home extends BaseController
 		$pegawai = ["nama"=>$data->findAll()];
 		echo view('tampil',$pegawai);
 	}
+	public function create()
+	{
+		return view('create');
+	}
 
 }

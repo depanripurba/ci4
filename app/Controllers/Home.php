@@ -16,7 +16,9 @@ class Home extends BaseController
 	}
 	public function tes()
 	{
-		echo view('tes');
+		$data = new DataModel();
+		$pegawai = ["nama"=>$data->findAll()];
+		echo view('tampil',$pegawai);
 	}
 
 }

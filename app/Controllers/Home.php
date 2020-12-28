@@ -26,7 +26,12 @@ class Home extends BaseController
 	}
 	public function postcreate()
 	{
-		var_dump($_POST);
+		$model = new DataModel();
+		$model->save([
+			'nama'=>'JACKY CHAN',
+			'jabatan'=>'Mandor',
+			'golongan'=>'atas'
+		]);
 	}
 
 }

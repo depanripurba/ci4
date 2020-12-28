@@ -24,5 +24,9 @@ class Home extends BaseController
 	{
 		return view('create');
 	}
+	public function postcreate()
+	{
+		var_dump($_POST);
+	}
 
 }

@@ -6,11 +6,13 @@ class UserController extends BaseController
 {
     public function SaveUser()
     {
-    
         $model = new UserModel();
         $model->save([
-			'email'=>'JACKY CHAN',
-			'password'=>'Mandor',
-		]);
+			'email'=>$_POST['email'],
+            'password'=>password_hash($_POST['password'],true),
+            'namadepan'=>$_POST['namadepan'],
+            'namabelakang'=>$_POST['namabelakang']
+        ]);
+        return redirect('registrasi');
     }
 }

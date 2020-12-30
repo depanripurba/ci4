@@ -4,12 +4,12 @@ use CodeIgniter\Debug\Toolbar\Collectors\Views;
 
 class Home extends BaseController
 {
+	// fungsi yang digunakan untuk meload index
 	public function index()
-	
 	{
 		return view('welcome_message');
 	}
-
+	// fungsi yang digunakan untuk menampilkan data
 	public function getdata()
 	{
 		echo view('tampildata');
@@ -20,10 +20,12 @@ class Home extends BaseController
 		$pegawai = ["nama"=>$data->findAll()];
 		echo view('tampil',$pegawai);
 	}
+	// untuk menampilkan tampilan registrasi
 	public function create()
 	{
 		return view('create');
 	}
+	// ini digunakan untuk mencoba bagian yang akan di coba
 	public function postcreate()
 	{
 		$model = new DataModel();

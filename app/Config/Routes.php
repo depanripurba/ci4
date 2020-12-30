@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/data', 'Home::tes');
 $routes->get('/create', 'Home::create');
-$routes->post('/create', 'Home::postcreate');
+$routes->post('/create', 'UserController::SaveUser');
 
 /**
  * --------------------------------------------------------------------

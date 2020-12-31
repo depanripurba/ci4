@@ -1,9 +1,21 @@
 <?php namespace App\Controllers;
 use App\Models\DataModel;
+use App\Models\UserModel;
 use CodeIgniter\Debug\Toolbar\Collectors\Views;
 
 class Home extends BaseController
 {
+	// fungsi yang digunakan untuk melindungi controller
+	public function lindungi()
+	{
+		$cekdata = new UserModel();
+		if(isset($_SESSION['nama'])){
+			var_dump('data session sudah di set');
+		}else{
+			var_dump('data session belum berhasil di set');
+		}
+		var_dump('hai');
+	}
 	// fungsi yang digunakan untuk meload index
 	public function index()
 	{
@@ -34,6 +46,11 @@ class Home extends BaseController
 			'jabatan'=>'Mandor',
 			'golongan'=>'atas'
 		]);
+	}
+	public function dashboard()
+	{
+		$this->lindungi();
+		return view('dashboard');
 	}
 
 }

@@ -11,13 +11,19 @@ class LoginController extends BaseController
     }
     public function login()
     {
+        $session = session();
         $autentikasi = new UserModel();
         $cek = $autentikasi->where('email',$_POST['email'])->first();
-        // var_dump($cek);
         if($cek){
             $cekpassword = password_verify($_POST['password'],$cek['password']);
             if($cekpassword){
                 echo 'password yang anda masukkan sudah benar';
+                $userdata = [
+                    'email'=>$cek['email'],
+                    'namadepan'=>$cek['namadepan']
+                ];
+                $session->set($userdata);
+                return redirect('dashboard');
             }else{
                 echo 'password yang anda masukkan salah';
             }

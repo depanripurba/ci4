@@ -49,7 +49,8 @@ class Home extends BaseController
 	}
 	public function dashboard()
 	{
-		$this->lindungi();
+		$session = session();
+		var_dump($session->get());
 		return view('dashboard');
 	}
 

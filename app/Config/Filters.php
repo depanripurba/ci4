@@ -6,16 +6,18 @@ class Filters extends BaseConfig
 {
 	// Makes reading things below nicer,
 	// and simpler to change out script that's used.
-	public $aliases = [
+public $aliases = [
 		'csrf'     => \CodeIgniter\Filters\CSRF::class,
 		'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
 		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
+		'Tes' => \App\Filters\Tes::class
 	];
 
 	// Always applied before every request
 	public $globals = [
 		'before' => [
 			//'honeypot'
+			
 			// 'csrf',
 		],
 		'after'  => [

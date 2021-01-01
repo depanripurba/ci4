@@ -23,7 +23,7 @@ class LoginController extends BaseController
                     'namadepan'=>$cek['namadepan']
                 ];
                 $session->set($userdata);
-                return redirect('dashboard');
+                return redirect()->to(base_url('dashboard'));
             }else{
                 echo 'password yang anda masukkan salah';
             }

@@ -24,10 +24,11 @@ defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
 defined('COMPOSER_PATH') || define('COMPOSER_PATH', ROOTPATH . 'vendor/autoload.php');
 
 // mendefeniksikan base url
-$base = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']) : 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']);
 
-defined('BASE') || define('BASE', $base);
+$server_name = !empty($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : 'localhost:8080';
 
+$base_url = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $server_name . '/';
+defined('BASE_URL') || define('BASE_URL', $base_url);
 /*
 |--------------------------------------------------------------------------
 | Timing Constants

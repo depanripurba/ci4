@@ -8,7 +8,7 @@ class Tes implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (!session()->islogin)
+        if (!session()->loginstatus)
 	    {
 	    	echo "invalid";
 	        return redirect()->to(base_url('/login'))->with('error', "Invalid Credential");

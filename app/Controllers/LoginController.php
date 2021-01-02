@@ -1,12 +1,15 @@
 <?php namespace App\Controllers;
 use App\Models\UserModel;
 use CodeIgniter\Debug\Toolbar\Collectors\Views;
-// https://www.xvideos.com/video54820709/19_year_old_korean_girl_with_perfect_big_tits_fucks_to_get_into_calendar#
+
 
 class LoginController extends BaseController
 {
     public function index()
     {
+        if(session()->loginstatus){
+            return redirect()->to(base_url('/'));
+        }
         return view('login');
     }
     public function login()
@@ -20,7 +23,8 @@ class LoginController extends BaseController
                 echo 'password yang anda masukkan sudah benar';
                 $userdata = [
                     'email'=>$cek['email'],
-                    'namadepan'=>$cek['namadepan']
+                    'namadepan'=>$cek['namadepan'],
+                    'loginstatus'=>true
                 ];
                 $session->set($userdata);
                 return redirect()->to(base_url('dashboard'));
@@ -32,5 +36,10 @@ class LoginController extends BaseController
             echo 'data gagal ditemukan';
         }
         
+    }
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to(base_url('/'));
     }
 }

@@ -12,7 +12,7 @@
     <title>SB Admin 2 - Blank</title>
 
     <!-- Custom fonts for this template-->
-    <link href="<?=base_url()?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -321,12 +321,14 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            <div class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=session()->namadepan?>
+                           
+                            </span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
-                            </a>
+                            </div>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
@@ -395,29 +397,29 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin ingin meninggalkan halaman website ini ?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Klik logout jika anda benar benar ingin meninggalkan halaman</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <form method="POST" class="user" action="<?=base_url('/logout')?>"><button type="submit" class="btn btn-primary" href="login.html">Logout</button></form>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?=base_url()?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?=base_url()?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=base_url()?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?=base_url()?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="<?=base_url()?>vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?=base_url()?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="<?=base_url()?>js/sb-admin-2.min.js"></script>
+    <script src="<?=base_url()?>/js/sb-admin-2.min.js"></script>
 
 </body>
 

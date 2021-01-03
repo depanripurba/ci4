@@ -13,6 +13,12 @@ class UserController extends BaseController
             'namadepan'=>$_POST['namadepan'],
             'namabelakang'=>$_POST['namabelakang']
         ]);
-        return redirect('registrasi');
+        $userdata = [
+            'email'=>$_POST['email'],
+            'namadepan'=>$_POST['namadepan'],
+            'loginstatus'=>true
+        ];
+        session()->set($userdata);
+        return redirect()->to(base_url('/'));
     }
 }

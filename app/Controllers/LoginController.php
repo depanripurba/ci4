@@ -32,7 +32,7 @@ class LoginController extends BaseController
                 echo 'password yang anda masukkan salah';
             }
             var_dump($cek['password']);
-        }else{
+        }else{ 
             echo 'data gagal ditemukan';
         }
         

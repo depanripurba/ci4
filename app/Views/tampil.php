@@ -31,7 +31,7 @@
                                             <td><?=$data["nama"]?></td>
                                             <td><?=$data["jabatan"]?></td>
                                             <td><?=$data["golongan"]?></td>
-                                            <td><a class="btn btn-danger" href="<?=base_url()?>hapus">Hapus</a></td>
+                                            <td><a class="btn btn-danger" href="<?=base_url()?>/hapus/<?=$data['id']?>">Hapus</a> <a class="btn btn-info" href="<?=base_url()?>/edit/<?=$data['id']?>">Edit</a></td>
                                         </tr>
                                         <?php
                                         }

@@ -27,9 +27,9 @@ class LoginController extends BaseController
                     'loginstatus'=>true
                 ];
                 $session->set($userdata);
-                return redirect()->to(base_url('dashboard'));
+                return redirect()->to(base_url('/'));
             }else{
-                echo 'password yang anda masukkan salah';
+                return redirect()->back()->withInput()->with('data','Password yang anda masukkan salah');
             }
             var_dump($cek['password']);
         }else{ 

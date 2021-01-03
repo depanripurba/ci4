@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 use App\Models\UserModel;
 use CodeIgniter\Debug\Toolbar\Collectors\Views;
+use PDO;
 
 class UserController extends BaseController
 {
@@ -20,5 +21,9 @@ class UserController extends BaseController
         ];
         session()->set($userdata);
         return redirect()->to(base_url('/'));
+    }
+    public function edituser($id)
+    {
+        echo $id;
     }
 }

@@ -38,6 +38,7 @@ $routes->post('/create', 'UserController::SaveUser');
 $routes->post('/aut', 'LoginController::login');
 $routes->get('/login', 'LoginController::index');
 $routes->post('/logout', 'LoginController::logout');
+$routes->get('/edit/(:num)', 'UserController::edituser/$1');
 
 /**
  * --------------------------------------------------------------------

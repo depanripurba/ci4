@@ -25,5 +25,6 @@ class UserController extends BaseController
     public function edituser($id)
     {
         echo $id;
+        return view('editdata');
     }
 }

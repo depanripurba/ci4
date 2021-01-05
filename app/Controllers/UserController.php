@@ -1,5 +1,6 @@
 <?php namespace App\Controllers;
 use App\Models\UserModel;
+use App\Models\DataModel;
 use CodeIgniter\Debug\Toolbar\Collectors\Views;
 use PDO;
 
@@ -24,7 +25,10 @@ class UserController extends BaseController
     }
     public function edituser($id)
     {
-        echo $id;
+        $model = new DataModel;
+        // var_dump($id);
+        $tes = $model->find($id);
+       var_dump($tes);
         return view('editdata');
     }
 }

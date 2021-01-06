@@ -26,9 +26,8 @@ class UserController extends BaseController
     public function edituser($id)
     {
         $model = new DataModel;
-        // var_dump($id);
-        $tes = $model->find($id);
-       var_dump($tes);
-        return view('editdata');
+        $tes = ['data'=>$model->find($id)];
+
+        return view('editdata',$tes);
     }
 }

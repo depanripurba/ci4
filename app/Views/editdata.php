@@ -37,19 +37,20 @@
                                 <h1 class="h4 text-gray-900 mb-4">Daftarkan akun anda</h1>
                             </div>
                             <form class="user" action="<?=base_url()?>/create" method="POST">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input name="namadepan" type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" name="namabelakang" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
-                                    </div>
-                                </div>
+                              
                                 <div class="form-group">
-                                    <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                                    <input name="nama" type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="nama" value="<?=$data['nama']?>">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <input name="golongan" type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Golongan" value="<?=$data['golongan']?>">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <input name="jabatan" type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Jabatan" value="<?=$data['jabatan']?>">
                                 </div>
                                
                                 <button type="submit" class="btn btn-primary">Update Data</button>

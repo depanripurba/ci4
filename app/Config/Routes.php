@@ -39,6 +39,7 @@ $routes->post('/aut', 'LoginController::login');
 $routes->get('/login', 'LoginController::index');
 $routes->post('/logout', 'LoginController::logout');
 $routes->get('/edit/(:num)', 'UserController::edituser/$1',['filter'=>'Tes']);
+$routes->post('/update/(:num)', 'UserController::updatedata/$1',['filter'=>'Tes']);
 
 /**
  * --------------------------------------------------------------------

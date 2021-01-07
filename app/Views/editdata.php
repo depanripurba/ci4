@@ -36,7 +36,7 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Daftarkan akun anda</h1>
                             </div>
-                            <form class="user" action="<?=base_url()?>/create" method="POST">
+                            <form class="user" action="<?=base_url()?>/update/<?=$data['id']?>" method="POST">
                               
                                 <div class="form-group">
                                     <input name="nama" type="text" class="form-control form-control-user" id="exampleInputEmail"

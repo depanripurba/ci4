@@ -30,4 +30,18 @@ class UserController extends BaseController
 
         return view('editdata',$tes);
     }
+    public function updatedata($id)
+    {
+        echo $id;
+        $model = new DataModel;
+        $data = [
+            'nama' => $_POST['nama'],
+            'jabatan'    => $_POST['jabatan'],
+            'golongan'    => $_POST['golongan']
+
+        ];
+        
+        $model->update($id, $data);
+        return redirect()->to(base_url('/data'));
+    }
 }
